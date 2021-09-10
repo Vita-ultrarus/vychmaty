@@ -1,0 +1,15 @@
+import math
+def f(x):
+    p=math.e ** (2*x)+3*x-4
+    return p
+
+def binary(a,b):
+    while abs(b-a)>=0.001:
+        x0=(b+a)/2
+        if f(x0)*f(a)<=0:
+            b=x0
+        elif f(x0)*f(b)<=0:
+            a=x0
+    return (a+b)/2
+
+print(binary(0.2,0.6))
