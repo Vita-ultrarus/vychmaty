@@ -1,0 +1,11 @@
+import math
+def f(x):
+    p=math.e ** (2*x)+3*x-4
+    return p
+def sec(a,b):
+    while abs(b-a)>=0.001:
+        x0=a-(f(a)*(b-a))/(f(b)-f(a))
+        b=a
+        a=x0
+    return (a+b)/2
+print(sec(0.4,1))
