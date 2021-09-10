@@ -1,0 +1,15 @@
+import math
+def f(x):
+    p=math.e ** (2*x)+3*x-4
+    return p
+def diff(x):
+    p=2*math.e**(2*x)+3
+    return p
+def N(x0):
+    xk=x0
+    xn=x0-f(x0)/diff(x0)
+    while abs(xn-xk)>=0.001:
+        xk=xn
+        xn=xk-f(xk)/diff(xk)
+    return (xk+xn)/2
+print(N(0.7))
