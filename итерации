@@ -1,0 +1,12 @@
+import math
+def fi(x):
+    p=math.log(4-3*x)/2
+    return p
+def it(x0):
+    xk=x0
+    xn=fi(xk)
+    while abs(xn-xk)>=0.001:
+        xk=xn
+        xn=fi(xk)
+    return (xn+xk)/2
+print(it(0.4))
